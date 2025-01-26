@@ -1,7 +1,6 @@
 'use server';
 
 import bcrypt from 'bcrypt';
-import { eq } from 'drizzle-orm';
 import { signIn } from 'next-auth/react';
 import { db } from './db';
 import { users } from './db/schema';
