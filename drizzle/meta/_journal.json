@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1737683935179,
+      "tag": "0000_hesitant_plazm",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1737747692591,
+      "tag": "0001_hot_wallow",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1737748547078,
+      "tag": "0002_nervous_hydra",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1737870216960,
+      "tag": "0003_optimal_surge",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1737870379154,
+      "tag": "0004_shiny_jack_flag",
+      "breakpoints": true
+    }
+  ]
+}

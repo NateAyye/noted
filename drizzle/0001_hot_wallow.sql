@@ -1,0 +1,1 @@
+ALTER TABLE "credentialUser" ADD COLUMN "name" text;

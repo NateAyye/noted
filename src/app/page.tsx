@@ -1,15 +1,12 @@
-import Link from 'next/link';
+import HomeHeader from '@/components/home-header';
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div>
-      <header>
-        <div>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-        </div>
-      </header>
-      <h1>Hello, world!</h1>
-    </div>
+    <>
+      <HomeHeader />
+      <div className="max-w-screen-lg mx-auto">
+        <h1>Hello, world!</h1>
+      </div>
+    </>
   );
 }

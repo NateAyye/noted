@@ -1,5 +1,7 @@
+import AuthProvider from '@/components/auth-provider';
 import { ThemeProvider } from '@/components/theme-provider';
 import { WebVitals } from '@/components/web-vitals';
+import { env } from '@/env';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -15,11 +17,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Noted - Note Taking App',
+  title: {
+    template: '%s | Note Taking App',
+    default: 'Noted',
+  },
+  applicationName: 'Noted',
+  publisher: 'Nathan Cuevas',
   description:
     'Noted is a note taking app that allows you to take notes and organize them in a clean and simple way.',
   keywords: ['note', 'notes', 'note taking', 'note app', 'noted'],
-  publisher: 'Nathan Cuevas',
 };
 
 export default function RootLayout({
@@ -30,15 +36,17 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider
-          attribute={'class'}
-          defaultTheme={'system'}
-          enableSystem
-          disableTransitionOnChange
-        >
-          {process.env.NODE_ENV === 'development' ? <WebVitals /> : null}
-          {children}
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider
+            attribute={'class'}
+            defaultTheme={'system'}
+            enableSystem
+            disableTransitionOnChange
+          >
+            {env.NODE_ENV === 'development' ? <WebVitals /> : null}
+            {children}
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
